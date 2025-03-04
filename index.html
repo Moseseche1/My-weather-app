@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather App</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      background-color: #e0f0f7; 
+      margin: 0; 
+      padding: 20px; 
+      text-align: center; 
+    }
+    .weather-container { 
+      width: 300px; 
+      margin: 0 auto; 
+      background: white; 
+      padding: 20px; 
+      border-radius: 10px; 
+      box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+    }
+    input[type="text"] { 
+      padding: 5px; 
+      margin: 10px; 
+      width: 60%; 
+    }
+    button { 
+      padding: 5px 10px; 
+      margin: 5px; 
+      background: #4a90e2; 
+      color: white; 
+      border: none; 
+      border-radius: 5px; 
+      cursor: pointer; 
+    }
+    #weather-info { 
+      font-size: 18px; 
+      margin-top: 15px; 
+    }
+    #weather-icon { 
+      font-size: 24px; 
+    }
+  </style>
+</head>
+<body>
+  <div class="weather-container">
+    <h1>Weather App</h1>
+    <input type="text" id="cityInput" placeholder="Enter city">
+    <button onclick="getWeather()">Get Weather</button>
+    <div id="weather-info"></div>
+  </div>
+  <script>
+    function getWeather() {
+      let city = document.getElementById("cityInput").value;
+      if (city === "") {
+        alert("Please enter a city!");
+        return;
+      }
+
+      // Simulate weather data (replace with API later)
+      let weatherData = {
+        temperature: "25°C",
+        condition: "Sunny",
+        icon: "☀️" // Emoji for now
+      };
+
+      let info = `Weather in ${city}: ${weatherData.temperature}, ${weatherData.condition}`;
+      document.getElementById("weather-info").innerHTML = info + `<span id="weather-icon">${weatherData.icon}</span>`;
+    }
+  </script>
+</body>
+      </html>
